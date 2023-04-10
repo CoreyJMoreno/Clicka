@@ -94,9 +94,8 @@ def exitScreen(x, y):
     auto.click()
 
 def main():
-    verbose = True
 
-    while verbose == True:
+    while True:
         print("What would you like to do?")
         print("(1) Sell")
         print("(2) Craft")
@@ -109,8 +108,8 @@ def main():
         elif val == '2': #craft script
             autoCraft()
 
-        elif val == '3':
-            verbose = False
+        elif val == '3': #exit loop
+            break
             
         else:
             print("Invalid Input, try again")

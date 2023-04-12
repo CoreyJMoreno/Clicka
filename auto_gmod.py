@@ -29,7 +29,7 @@ def autoCraft():
     auto.moveTo(1326, 942)
 
     # auto click
-    craftClicker()
+    craftClicker(88)
 
     # program done, exit screen
     print('Done, exiting')
@@ -71,7 +71,7 @@ def autoSell():
             xStartPos -= shiftIndex
 
             # increment
-            innerLoopIndex += 1
+            colIndex += 1
 
         # reset starting index
         xStartPos = 1715
@@ -121,15 +121,16 @@ def countDownTimer(seconds):
     # tell user program has started
     print('\rStart')
 
-def craftClicker():
+def craftClicker(clicks):
     # initialize variables
     i = 0
 
-    # loop until 150 clicks
-    while i < 150:
+    # loop until 88 clicks
+    while i < clicks:
 
         # click
         auto.click()
+        time.sleep(.2)
 
         # increment
         i += 1

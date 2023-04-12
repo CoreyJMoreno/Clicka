@@ -157,17 +157,15 @@ def main():
         val = input(": ")
 
         # check User Input, run
-        if val == '1': #sell script
-            autoSell()
-            
-        elif val == '2': #craft script
-            autoCraft()
-
-        elif val == '3': #exit loop
-            break
-            
-        else: # error code
-            print("Invalid Input, try again")
+        match val:
+            case '1':
+                autoSell() #sell script
+            case '2':
+                autoCraft() #craft script
+            case '3':
+                break #exit loop
+            case _:
+                print("Invalid Input, try again") # error code
 
 # initialize main function
 if __name__ == "__main__":

@@ -123,19 +123,19 @@ def countDownTimer(seconds):
 
 def craftClicker(clicks):
     # initialize variables
-    i = 0
+    index = 0
 
-    while i < clicks:
+    while index < clicks:
 
         # click
         auto.click()
         time.sleep(.1)
 
         # increment
-        i += 1
+        index += 1
 
         # print click number
-        print('\r' + str(i), end='')
+        print('\r' + str(index), end='')
 
     # print endline
     print('\n', end='')

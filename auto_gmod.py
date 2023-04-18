@@ -125,12 +125,11 @@ def craftClicker(clicks):
     # initialize variables
     i = 0
 
-    # loop until 88 clicks
     while i < clicks:
 
         # click
         auto.click()
-        time.sleep(.2)
+        time.sleep(.1)
 
         # increment
         i += 1

@@ -1,7 +1,14 @@
 from functions import *
+# from resolutionClass import *
 
 def main():
     # begin program
+    dimensions = sizeUp()
+    print(dimensions)
+
+    r = chooseDimension(dimensions)
+    print(r)
+
     while True:
         # prompt User
         print("What would you like to do?")
@@ -13,9 +20,9 @@ def main():
         # check User Input, run
         match val:
             case '1':
-                autoSell() #sell script
+                autoSell(dimensions) #sell script
             case '2':
-                autoCraft() #craft script
+                autoCraft(dimensions) #craft script
             case '3':
                 break #exit loop
             case _:

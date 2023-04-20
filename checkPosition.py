@@ -1,7 +1,10 @@
 import pyautogui as auto
 import time
 
-time.sleep(5)
+dimensions = auto.size()
 
-x = auto.position()
-print(x)
+
+# time.sleep(5)
+
+# x = auto.position()
+# print(x)

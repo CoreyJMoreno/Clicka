@@ -1,10 +1,37 @@
 import pyautogui as auto
 import time
 
-def autoCraft():
-    # initialize variables
-    exitX = 348
-    exitY = 922
+class Resolution:
+    def __init__(self, exitXCraft=0, exitYCraft=0, craftTableX=0,  
+                 craftTableY=0, scrollX=0, startScrollY=0, endScrollY=0, 
+                    warHammerX=0, warHammerY=0, craftButtonX=0, craftButtonY=0):
+        self.__exitXCraft = exitXCraft
+        self.__exitYCraft = exitYCraft
+        self.__craftTableX = craftTableX
+        self.__craftTableY = craftTableY
+        self.__scrollX =  scrollX
+        self.__startScrollY = startScrollY
+        self.__endScrollY = endScrollY
+        self.__warHammerX =  warHammerX
+        self.__warHammerY = warHammerY
+        self.__craftButtonX =  craftButtonX
+        self.__craftButtonY =  craftButtonY
+
+    def fullHD(self):
+        self.__exitXCraft = 348
+        self.__exitYCraft = 922
+        self.__craftTableX = 352
+        self.__craftTableY = 437
+        self.__scrollX = 1620
+        self.__startScrollY = 312
+        self.__endScrollY = 900
+        self.__warHammerX = 1326
+        self.__warHammerY = 615
+        self.__craftButtonX = 1326
+        self.__craftButtonY = 942
+
+def autoCraft(resolution):
+    
 
     # instruct user
     print("Go to crafting table and press e, now wait")
@@ -13,7 +40,7 @@ def autoCraft():
     # countdown until start
     countDownTimer(5)
 
-    # move to craft button
+    # move to table button
     auto.moveTo(352, 437) 
     auto.click()
 
@@ -144,3 +171,22 @@ def exitScreen(x, y):
     # move to exit button, click
     auto.moveTo(x, y)
     auto.click()
+
+def sizeUp():
+    dimension = auto.size()
+    x = dimension[0]
+    y = dimension[1]
+    listData = [x, y]
+    return listData
+    
+def chooseDimension(dimensions):
+    list = Resolution()
+    list.__init__(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+    if dimensions[0] == 1920 and dimensions[1] == 1080:
+        Resolution.fullHD(list)
+        
+    else:
+        print('yuh')
+
+    return list

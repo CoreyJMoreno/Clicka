@@ -5,18 +5,22 @@ def main():
     while True:
         # prompt User
         print("What would you like to do?")
-        print("(1) Sell")
+        print("(1) Craft then Sell")
         print("(2) Craft")
-        print("(3) Exit")
+        print("(3) Sell")
+        print("(4) Exit")
         val = input(": ")
 
         # check User Input, run
         match val:
             case '1':
-                autoSell() #sell script
+                autoCraft()
+                autoSell()
             case '2':
                 autoCraft() #craft script
             case '3':
+                autoSell() #sell script
+            case '4':
                 break #exit loop
             case _:
                 print("Invalid Input, try again") # error code

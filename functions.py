@@ -49,7 +49,6 @@ def autoSell():
 
     # instruct user
     print("Press i, now wait")
-    time.sleep(3)
 
     # countdown until start
     countDownTimer(5)
@@ -129,7 +128,7 @@ def craftClicker(clicks):
 
         # click
         auto.click()
-        time.sleep(.1)
+        time.sleep(.15)
 
         # increment
         index += 1

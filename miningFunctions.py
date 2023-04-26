@@ -1,5 +1,9 @@
+# modules
 import pyautogui as auto
 import pydirectinput as dx
+import numpy as np
+from PIL import ImageGrab
+import cv2
 import time
 
 def autoCraft():

@@ -5,11 +5,11 @@ def main():
     while True:
         # prompt User
         print("What would you like to do?\n" \
-              + "(1) Craft then Sell\n" \
-              + "(2) Craft\n" \
-              + "(3) Sell\n" \
-              + "(4) Idle\n"
-              + "(5) Exit")
+            + "(1) Craft then Sell\n" \
+            + "(2) Craft\n" \
+            + "(3) Sell\n" \
+            + "(4) Idle\n"
+            + "(5) Exit")
         val = input(": ")
 
         # check User Input, run
@@ -30,7 +30,6 @@ def main():
                 break # exit loop
             case _:
                 print("Invalid Input, try again") # error code
-
 
 # initialize main function
 if __name__ == "__main__":

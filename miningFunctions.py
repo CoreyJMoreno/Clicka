@@ -1,4 +1,5 @@
 import pyautogui as auto
+import pydirectinput as dx
 import time
 
 def autoCraft():
@@ -36,7 +37,7 @@ def autoCraft():
     time.sleep(1)
     exitScreen(exitX, exitY)
 
-def autoSell():
+def autoSell(timer):
     # initialize variables
     colIndex = rowIndex = 1
     xStartPos = 1715
@@ -51,7 +52,7 @@ def autoSell():
     print("Press i, now wait")
 
     # countdown until start
-    countDownTimer(5)
+    countDownTimer(timer)
 
     while rowIndex <= 4:
         while colIndex <= 11:
@@ -102,6 +103,21 @@ def changeToTwo(x, y):
     auto.moveTo(x, y + 65)
     auto.click()
 
+def chooseMiningJob():
+    dx.press('f4') # open jobs
+    auto.moveTo(430, 380) # move to jobs
+    auto.click()
+    auto.moveTo(730, 300) # move to citizens
+    auto.click()
+    auto.moveTo(730, 375) # move to miner
+    auto.click()
+    time.sleep(.5)
+    auto.moveTo(1180, 880) # confirm
+    auto.click()
+    time.sleep(1.5)
+    dx.press('3') # get pick
+    auto.click()
+
 def countDownTimer(seconds):
     # initialize variables
     countDown = seconds
@@ -139,7 +155,32 @@ def craftClicker(clicks):
     # print endline
     print('\n', end='')
 
+def exitAfk():
+    # exit afk mode
+    dx.press('y')
+    auto.press('/')
+    auto.press('a')
+    auto.press('f')
+    auto.press('k')
+    auto.press('enter')
+    time.sleep(2)
+
 def exitScreen(x, y):
     # move to exit button, click
     auto.moveTo(x, y)
     auto.click()
+
+def idleUntilAfk():
+    # initialize time
+    t = time.localtime()
+    current_time = time.strftime("%H:%M:%S", t)
+
+    # check if current time is server restart time
+    while current_time != "10:00:00":
+        # update time
+        t = time.localtime()
+        current_time = time.strftime("%H:%M:%S", t)
+        print('\r' + "Time: " + str(current_time), end='')
+        continue
+
+    print("\nexit at " + current_time)

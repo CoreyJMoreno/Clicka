@@ -52,8 +52,10 @@ def autoSell(timer):
     exitX = 1770
     exitY = 135
 
-    # instruct user
-    print("Press i, now wait")
+    # instruct user if chosen manually
+    if timer == 5:
+        print("Press i, now wait")
+    time.sleep(2)
 
     # countdown until start
     countDownTimer(timer)

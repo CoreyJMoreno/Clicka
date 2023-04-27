@@ -1,4 +1,5 @@
 from miningFunctions import *
+import os
 
 def main():
     # begin program
@@ -30,6 +31,8 @@ def main():
                 break # exit loop
             case _:
                 print("Invalid Input, try again") # error code
+        time.sleep(2)
+        os.system('cls') # clear terminal
 
 # initialize main function
 if __name__ == "__main__":

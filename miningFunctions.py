@@ -55,7 +55,7 @@ def autoSell(timer):
     # instruct user if chosen manually
     if timer == 5:
         print("Press i, now wait")
-    time.sleep(2)
+    time.sleep(1)
 
     # countdown until start
     countDownTimer(timer)

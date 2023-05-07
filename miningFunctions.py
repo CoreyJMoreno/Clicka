@@ -190,3 +190,4 @@ def idleUntilAfk():
         continue
 
     print("\nexit at " + current_time)
+

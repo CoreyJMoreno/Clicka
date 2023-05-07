@@ -1,4 +1,5 @@
 from miningFunctions import *
+import keyboard
 import os
 
 def main():
@@ -19,18 +20,21 @@ def main():
                 autoCraft() # craft script
                 dx.press('i') # open inventory
                 autoSell(1) # sell script
+                
             case '2':
                 autoCraft() # craft script
+
             case '3':
                 autoSell(5) # sell script
+
             case '4':
                 idleUntilAfk() # idle script
                 exitAfk() # exit afk
                 chooseMiningJob() # pick job
-            case '5':
-                break # exit loop
+
             case _:
-                print("Invalid Input, try again") # error code
+                break # exit loop
+
         time.sleep(2)
         os.system('cls') # clear terminal
 

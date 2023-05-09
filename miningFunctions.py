@@ -6,12 +6,8 @@ from PIL import ImageGrab
 import cv2
 import time
 
-def autoCraft():
-    # initialize variables
-    exitX = 348
-    exitY = 922
-
-    # instruct user
+def autoCraft(x, y):
+       # instruct user
     print("Go to crafting table and press e, now wait")
     time.sleep(3)
 
@@ -19,19 +15,19 @@ def autoCraft():
     countDownTimer(5)
 
     # move to craft button
-    auto.moveTo(352, 437) 
+    auto.moveTo(int(x * .18333), int(y * 0.404629))
     auto.click()
 
     # move to scroll area
-    auto.moveTo(1620, 312) 
-    auto.dragTo(1620, 900, button='left')
+    auto.moveTo(int(x * 0.846), int(y * .288889))
+    auto.dragTo(int(x * 0.846), int(y * 0.83333), button='left')
 
     # move to warhammer, click
-    auto.moveTo(1326, 615)
+    auto.moveTo(int(x * 0.6906), int(y * 0.569444))
     auto.click()
 
     # move to craft button
-    auto.moveTo(1326, 942)
+    auto.moveTo(int(x * 0.6906), int(y * 0.87222))
 
     # auto click
     craftClicker(88)
@@ -39,7 +35,7 @@ def autoCraft():
     # program done, exit screen
     print('Done, exiting')
     time.sleep(1)
-    exitScreen(exitX, exitY)
+    exitScreen(int(x * 0.18125), int(y * 0.8537))
 
 def autoSell(timer):
     # initialize variables
@@ -190,4 +186,3 @@ def idleUntilAfk():
         continue
 
     print("\nexit at " + current_time)
-

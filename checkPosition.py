@@ -1,7 +1,8 @@
 import pyautogui as auto
 import time
 
-time.sleep(5)
-
+s = auto.size()
+print(s)
+time.sleep(7)
 x = auto.position()
 print(x)

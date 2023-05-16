@@ -107,5 +107,11 @@ def tchangeToTwo(x, y, s):
     auto.moveTo(x, y + s)
     auto.click()
 
-size = auto.size()
-testAutoSell(5, size[0], size[1])
+# size = auto.size()
+# testAutoSell(5, size[0], size[1])
+
+def moveCheck():
+    auto.moveRel(100, 0, 5)
+
+time.sleep(4)
+moveCheck()

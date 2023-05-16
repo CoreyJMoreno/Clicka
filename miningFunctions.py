@@ -60,11 +60,11 @@ def autoSell(timer):
         while colIndex <= 11:
             # move to first item in row
             auto.moveTo(xStartPos, yStartPos)
-            auto.click()
+            # auto.click()
 
             # move to sell button
             auto.moveRel(5, 150)
-            auto.click()
+            # auto.click()
 
             # switch item count from 1 to 2
             changeToTwo(centerX, centerY)
@@ -145,7 +145,7 @@ def craftClicker(clicks):
     while index < clicks:
 
         # click
-        auto.click()
+        # auto.click()
         time.sleep(.15)
 
         # increment

@@ -11,16 +11,20 @@ def main():
     while True:
         # prompt User
         print("What would you like to do?\n" \
-            + "(1) Craft then Sell\n" \
-            + "(2) Craft\n" \
-            + "(3) Sell\n" \
-            + "(4) Idle\n"
-            + "(5) Exit")
+            + "(1) Full Automation"
+            + "(2) Craft then Sell\n" \
+            + "(3) Craft\n" \
+            + "(4) Sell\n" \
+            + "(5) Idle\n"
+            + "(6) Exit")
         val = input(": ")
 
         # check User Input, run
         match val:
             case '1':
+                break
+
+            case '2':
                 autoCraft(width, height) # craft script
                 dx.press('i') # open inventory
                 autoSell(1) # sell script

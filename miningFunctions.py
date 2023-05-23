@@ -3,8 +3,9 @@ import pyautogui as auto
 import pydirectinput as dx
 import numpy as np
 from PIL import ImageGrab
-import cv2
+import cv2 as cv
 import time
+import os
 
 def autoCraft(x, y):
        # instruct user
